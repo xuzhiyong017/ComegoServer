@@ -1,0 +1,68 @@
+"login": {
+	  "accounttypes": [
+		  {
+			  "accounttype": 1,
+			  "name": "YY????",
+			  "state": 1
+		  },
+		  {
+			  "accounttype": 3,
+			  "name": "QQ????",
+			  "state": 1
+		  },
+		  {
+			  "accounttype": 6,
+			  "name": "?????",
+			  "state": 1
+		  }
+	  ]
+  },
+  "qiniu": true,
+  "hiido": true,
+  "ym": true,
+  "default_log": true,
+  "ym_crash": true,
+  "qrcode": false,
+  "splash": {
+	  "imgs": [
+		  "http://dwgaga-image.qiniudn.com/more_img_chunjie2016.1080*1920.jpg",
+		  "http://dwgaga-image.qiniudn.com/more_img_chunjie2016.1242*2208.jpg",
+		  "http://dwgaga-image.qiniudn.com/more_img_chunjie2016.320*480.jpg",
+		  "http://dwgaga-image.qiniudn.com/more_img_chunjie2016.640*1136.jpg",
+		  "http://dwgaga-image.qiniudn.com/more_img_chunjie2016.640*960.jpg",
+		  "http://dwgaga-image.qiniudn.com/more_img_chunjie2016.720*1280.jpg",
+		  "http://dwgaga-image.qiniudn.com/more_img_chunjie2016.750*1334.jpg"
+	  ],
+	  "marketlogo": [
+		  "http://dwgaga-image.qiniudn.com/more_logo_2_6_0_360huodong_1080x1920.png",
+		  "http://dwgaga-image.qiniudn.com/more_logo_2_6_0_360huodong_720x1280.png"
+	  ],
+	  "jump": "",
+	  "secs": 3,
+	  "date": {
+		  "validdate": "2016-01-27 00:00:01",
+		  "invaliddate": "2016-06-15 00:00:00"
+	  }
+  },
+  "bubble": {
+	  "imgs_my": [
+		  "http://dwgaga-image.qiniudn.com/FoAkqAhx-GtYWmKB44xKRKcKr0ha",
+		  "http://dwgaga-image.qiniudn.com/FjKUJxcD-MTo_ZebHJ-tivtRcW53",
+		  "http://dwgaga-image.qiniudn.com/FgGqx5EVrDeiSeSdB4jiOw1pdo3V"
+	  ],
+	  "imgs_other": [
+		  "http://dwgaga-image.qiniudn.com/Fo5JV3NNjucovwMpxr3pv78rzd76",
+		  "http://dwgaga-image.qiniudn.com/FrpunE1HO7G6QuayS4YPUoMEdq-Y",
+		  "http://dwgaga-image.qiniudn.com/FuKfanfJUVzhNiOSK_Z7ZBqFG1I6",
+		  "http://dwgaga-image.qiniudn.com/FoXXVxP8S7se1vnTR8WSXIIv8KOn",
+		  "http://dwgaga-image.qiniudn.com/FhE3t_c-xMdAJytE3aE0o7M_krxL",
+		  "http://dwgaga-image.qiniudn.com/FhLDbV-Nl7vV4ZKwTkYUbj2wGsER",
+		  "http://dwgaga-image.qiniudn.com/FghnJjy3iMuVGNRX71j6dwt61U-t"
+	  ],
+	  "version": 5,
+	  "date": {
+		  "validdate": "2016-01-27 00:00:01",
+		  "invaliddate": "2016-07-27 00:00:01"
+	  }
+  }
+}

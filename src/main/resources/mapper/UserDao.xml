@@ -15,4 +15,10 @@
 			id = #{userId}
 	</select>
 
+	<insert id="registerUser" parameterType="User">
+		<!-- ignore 主键冲突，报错 -->
+		INSERT ignore INTO Users Users(Nick,LoginMacId,Logourl,Sex,Birthday,FromStore,LoginIp,AccountType,RoleType,ClientVersion,Flags,MacId)
+		VALUES (#{nick}, #{loginMacId},#{logourl},#{sex},#{birthday},#{fromStore},#{loginIp},#{accountType},#{roleType},#{clientVersion},#{flags},#{macId})
+	</insert>
+
 </mapper>

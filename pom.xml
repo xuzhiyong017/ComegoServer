@@ -5,10 +5,33 @@
   <artifactId>comegoServer</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>comegoServer Maven Webapp</name>
+  <name>comegoServer</name>
   <url>http://maven.apache.org</url>
+
+  <repositories>
+    <repository>
+      <id>scienjus-mvn-repo</id>
+      <url>https://raw.github.com/ScienJus/maven/snapshot/</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
+
   <dependencies>
 
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+      <version>3.2.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.scienjus</groupId>
+      <artifactId>spring-authorization-manager</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
     <!-- 单元测试 -->
     <dependency>
       <groupId>junit</groupId>
@@ -141,6 +164,7 @@
       <version>3.2</version>
     </dependency>
   </dependencies>
+
   <build>
     <finalName>comegoServer</finalName>
     <plugins>

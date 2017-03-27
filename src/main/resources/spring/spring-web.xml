@@ -8,20 +8,48 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context.xsd
 	http://www.springframework.org/schema/mvc
-	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+	http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
 	<!-- 配置SpringMVC -->
 	<!-- 1.开启SpringMVC注解模式 -->
 	<!-- 简化配置： 
 		(1)自动注册DefaultAnootationHandlerMapping,AnotationMethodHandlerAdapter 
 		(2)提供一些列：数据绑定，数字和日期的format @NumberFormat, @DateTimeFormat, xml,json默认读写支持 
 	-->
-	<mvc:annotation-driven />
-	
+	<mvc:annotation-driven >
+		<mvc:argument-resolvers>
+			<!--配置注入登录用户的解析器-->
+			<bean id="currentUserMethodArgumentResolver" class="com.scienjus.authorization.resolvers.CurrentUserMethodArgumentResolver">
+				<!--需要解析的用户类-->
+				<property name="userModelClass" value="com.xuzhiyong.comego.entity.User" />
+				<!--查询用户的bean-->
+				<property name="userModelRepository" ref="userRepository" />
+			</bean>
+		</mvc:argument-resolvers>
+	</mvc:annotation-driven>
+	<bean id="userRepository"  class="com.xuzhiyong.comego.dao.UserRepository" />
+
 	<!-- 2.静态资源默认servlet配置
 		(1)加入对静态资源的处理：js,gif,png
 		(2)允许使用"/"做整体映射
 	 -->
 	 <mvc:default-servlet-handler/>
+
+	<mvc:interceptors>
+		<!--身份验证的拦截器-->
+		<bean id="authorizationInterceptor" class="com.scienjus.authorization.interceptor.AuthorizationInterceptor">
+			<!--验证信息存储的Http头-->
+			<property name="httpHeaderName" value="authorization" />
+			<!--验证信息通用前缀，例如Bearer-->
+			<property name="httpHeaderPrefix" value="" />
+			<!--验证失败时的错误信息-->
+			<property name="unauthorizedErrorMessage" value="令牌失效，请重新登录" />
+			<!--管理验证信息的bean-->
+			<property name="manager" ref="tokenManager" />
+		</bean>
+	</mvc:interceptors>
+
+
+
 	 
 	 <!-- 3.配置jsp 显示ViewResolver -->
 	 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

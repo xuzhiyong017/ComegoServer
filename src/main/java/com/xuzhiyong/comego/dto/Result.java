@@ -11,6 +11,8 @@ public class Result<T> {
 
 	private String error;// 错误信息
 
+	private int code; //错误码
+
 	public Result() {
 	}
 
@@ -21,8 +23,9 @@ public class Result<T> {
 	}
 
 	// 错误时的构造器
-	public Result(boolean success, String error) {
+	public Result(boolean success,int code,String error) {
 		this.success = success;
+		this.setCode(code);
 		this.error = error;
 	}
 
@@ -55,4 +58,11 @@ public class Result<T> {
 		return "JsonResult [success=" + success + ", data=" + data + ", error=" + error + "]";
 	}
 
+	public int getCode() {
+		return code;
+	}
+
+	public void setCode(int code) {
+		this.code = code;
+	}
 }
